@@ -12,6 +12,7 @@ import {
     TransitionRoot
 } from '@headlessui/vue'
 import { ChevronUpDownIcon, CheckIcon } from '@heroicons/vue/20/solid'
+import Header from './Layouts/Header.vue';
 
 const auth = usePage().props.auth;
 const carts = computed(() => usePage().props.cart.data.items);
@@ -28,7 +29,7 @@ const query = ref('')
 const queryWarehouse = ref('')
 const citiesLoading = ref(false)
 const warehousesLoading = ref(false)
-const liqPay = ref('liqpay')
+const liqPay = ref('liqPay')
 // Computed filtered arrays
 const filteredCities = computed(() => {
     if (query.value === '') {
@@ -181,7 +182,7 @@ let sendOrder = async () => {
 
 
         const orderId = orderResponse.data.order_id;
-        if (liqPay.value == 'liqPay') {
+        if (liqPay.value === 'liqPay') {
             const response = await axios.post('/liqpay/getPaymentForm', {
                 amount: total.value,
                 order_id: orderId
@@ -274,7 +275,7 @@ defineExpose({
 </script>
 <template>
 
-    <UserLayout>
+    <Header></Header>
         <section
             class="bg-white text-gray-600 body-font relative mx-auto max-w-1xl px-4 py-6 sm:px-6 sm:py-24 lg:max-w-screen-1xl lg:px-8">
             <div
@@ -549,7 +550,7 @@ defineExpose({
                         class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                         <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
                             <div class="flex items-center ps-3">
-                                <input id="liqpay" type="radio" value="liqpay" name="list-radio" v-model="liqPay"
+                                <input id="liqPay" type="radio" value="liqPay" name="list-radio" v-model="liqPay"
                                     class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
                                 <label for="liqpay"
                                     class="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Онлайн
@@ -606,6 +607,6 @@ defineExpose({
 
         </section>
 
-    </UserLayout>
+
 
 </template>

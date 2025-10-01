@@ -5,7 +5,6 @@ import {
     Combobox,
     ComboboxInput,
     ComboboxOptions,
-    ComboboxOption,
     ComboboxButton,
 } from '@headlessui/vue'
 
@@ -210,7 +209,6 @@ onMounted(() => {
 </template>
 
 <style>
-/* Add custom shadow text effect for hover states */
 .hover\:text-shadow-sm:hover {
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }

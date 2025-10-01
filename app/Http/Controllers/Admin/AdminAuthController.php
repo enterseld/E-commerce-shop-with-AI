@@ -16,8 +16,6 @@ class AdminAuthController extends Controller
 
     public function login(Request $request)
     {
-        // Add your login logic here
-        // Check if the user is an admin and redirect accordingly
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'is_admin' => true])) {
             return redirect()->route('admin.dashboard'); // Redirect to the admin dashboard
         }

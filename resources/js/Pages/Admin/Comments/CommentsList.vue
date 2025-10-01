@@ -219,13 +219,8 @@ const publishReply = async ($id) => {
                 </div>
                 <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
                     aria-label="Table navigation">
-                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
-                        Showing
-                        <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
-                        of
-                        <span class="font-semibold text-gray-900 dark:text-white">1000</span>
-                    </span>
-                    <ul class="inline-flex items-stretch -space-x-px">
+                    
+                    <!--<ul class="inline-flex items-stretch -space-x-px">
                         <li>
                             <a href="#"
                                 class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -270,7 +265,7 @@ const publishReply = async ($id) => {
                                 </svg>
                             </a>
                         </li>
-                    </ul>
+                    </ul>-->
                 </nav>
             </div>
         </div>

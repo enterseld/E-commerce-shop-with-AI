@@ -3,7 +3,7 @@ import { onMounted } from 'vue';
 import { initFlowbite } from 'flowbite';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
-import Hero from './Hero.vue';
+
 import ChatPopup from './ChatPopup.vue';
 onMounted(() => {
     initFlowbite();
