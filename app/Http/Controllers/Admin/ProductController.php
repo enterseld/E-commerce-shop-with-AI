@@ -18,19 +18,23 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::with('category', 'brand', 'product_images') -> get();
+        $products = Product::with('category', 'brand', 'product_images')->paginate(10);
         $brands = Brand::get();
         $categories = Category::get();
 
-        return Inertia::render('Admin/Product/Index', 
-        ['products' => $products, 
-        'categories' => $categories, 
-        'brands' => $brands]);
+        return Inertia::render(
+            'Admin/Product/Index',
+            [
+                'products' => $products,
+                'categories' => $categories,
+                'brands' => $brands
+            ]
+        );
     }
 
     public function store(Request $request)
     {
-        
+
         $product = new Product;
         $product->title = $request->title;
         $product->price = $request->price;
@@ -43,7 +47,7 @@ class ProductController extends Controller
         //check if product has images upload    
 
         if ($request->hasFile('product_images')) {
-            
+
             $productImages = $request->file('product_images');
             foreach ($productImages as $image) {
                 // Generate a unique name for the image using timestamp and random string
@@ -61,7 +65,8 @@ class ProductController extends Controller
     }
 
 
-    public function deleteImage($id){
+    public function deleteImage($id)
+    {
         $image = ProductImages::where('id', $id)->delete();
         return redirect()->route('admin.products.index')->with('Success', 'Image deleted');
     }
@@ -101,7 +106,8 @@ class ProductController extends Controller
         return redirect()->route('admin.products.index')->with('success', 'Product updated successfully.');
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         $product = Product::findOrFail($id)->delete();
         return redirect()->route('admin.products.index')->with('Success', 'Product deleted');
     }

@@ -73,14 +73,14 @@ class Cart
         foreach ($cartItems as $cartItem) {
             // Check if the record already exists in the database
             $existingCartItem = CartItem::where([
-                'user_id' => $request->user()->id,
+                'user_id' => Auth::user()->id,
                 'product_id' => $cartItem['product_id'],
             ])->first();
 
             if (!$existingCartItem) {
                 // Only insert if it doesn't already exist
                 $newCartItems[] = [
-                    'user_id' => $request->user()->id,
+                    'user_id' => Auth::user()->id,
                     'product_id' => $cartItem['product_id'],
                     'quantity' => $cartItem['quantity'],
                     'vendor_code' => $cartItem['vendor_code'],

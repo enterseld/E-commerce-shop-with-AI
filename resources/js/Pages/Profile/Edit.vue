@@ -146,7 +146,7 @@ console.log(orders[1]);
                             <div class="flex-1 min-w-0 ms-4">Місто</div>
                             <div class="flex-1 min-w-0 ms-4">Адреса</div>
                             <div class="flex-1 min-w-0 ms-4">Дата</div>
-                            <div class="w-24 text-right">Price</div>
+                            <div class="w-24 text-right">Ціна</div>
                             <div class="flex-1 min-w-0 ms-4">Оплата</div>
                         </div>
 
@@ -154,9 +154,7 @@ console.log(orders[1]);
                         <ul>
                             <li v-for="(order, index) in visibleOrders" :key="order.id" class="py-3 sm:py-4 border-b">
                                 <div class="flex items-center">
-                                    <div class="shrink-1 w-8">
-                                        <img class="w-8 h-8 rounded-full" src="" alt="Order image">
-                                    </div>
+
                                     <div class="flex-1 min-w-0 ms-4">
                                         <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
                                             {{ order.mobile_phone }}

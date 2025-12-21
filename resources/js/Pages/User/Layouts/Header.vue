@@ -143,15 +143,15 @@ onMounted(() => {
                     <li class="flex items-center">
                         <a href="#"
                             class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-500 md:p-0 md:dark:text-blue-500 transition-transform duration-300 hover:scale-110 hover:text-shadow-sm"
-                            aria-current="page">Home</a>
+                            aria-current="page">Головна</a>
                     </li>
                     <li class="flex items-center">
                         <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-transform duration-300 hover:scale-110 hover:text-shadow-sm">Pricing</a>
+                            class="block py-2 pl-3 pr-4 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-transform duration-300 hover:scale-110 hover:text-shadow-sm">Доставка та оплата</a>
                     </li>
                     <li class="flex items-center">
                         <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-transform duration-300 hover:scale-110 hover:text-shadow-sm">Contact</a>
+                            class="block py-2 pl-3 pr-4 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:hover:text-blue-500 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition-transform duration-300 hover:scale-110 hover:text-shadow-sm">Контакти</a>
                     </li>
                     <li class="transition-all duration-300"
                         :class="{ 'w-150': query.length > 0, 'w-100': query.length === 0 }">

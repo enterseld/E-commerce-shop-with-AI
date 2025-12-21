@@ -22,8 +22,6 @@ class NovaPostService
         
         $methodProperties->FindByString = $findBy;
 
-        
-    
         $response = Http::withOptions(['verify' => false])->post($this->apiUrl, [
             'apiKey' => $this->apiKey,
             'modelName' => $modelName,

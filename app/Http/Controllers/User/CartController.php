@@ -11,6 +11,7 @@ use App\Models\UserAdress;
 use App\Services\NovaPostService as ServicesNovaPostService;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class CartController extends Controller
@@ -25,7 +26,7 @@ class CartController extends Controller
     public function view(Request $request, Product $product)
     {
 
-        $user = $request->user();
+        $user = Auth::user();
 
         if ($user) {
             $cartItems = CartItem::where('user_id', $user->id)->get();
@@ -95,7 +96,7 @@ class CartController extends Controller
     public function store(Request $request, Product $product)
     {
         $quantity = $request->post('quantity', 1);
-        $user = $request->user();
+        $user = Auth::user();
 
         if ($user) {
             $cartItem = CartItem::where(['user_id' => $user->id, 'product_id' => $product->id])->first();
@@ -138,7 +139,7 @@ class CartController extends Controller
     public function update(Request $request, Product $product)
     {
         $quantity = $request->integer('quantity');
-        $user = $request->user();
+        $user = Auth::user();
 
         if ($user) {
             CartItem::where(['user_id' => $user->id, 'product_id' => $product->id])->update(['quantity' => $quantity], ['vendor_code' => $product->vendor_code]);
@@ -158,7 +159,7 @@ class CartController extends Controller
 
     public function delete(Request $request, Product $product)
     {
-        $user = $request->user();
+        $user = Auth::user();
         if ($user) {
             CartItem::query()->where(['user_id' => $user->id, 'product_id' => $product->id])->first()?->delete();
             if (CartItem::count() <= 0) {

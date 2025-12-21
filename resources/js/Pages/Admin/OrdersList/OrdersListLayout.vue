@@ -1,8 +1,8 @@
 <template>
     <AdminLayout>
-        <Catalog :products = "products">
+        <OrdersList>
             
-        </Catalog>
+        </OrdersList>
 
     </AdminLayout>
 
@@ -10,9 +10,8 @@
 
 <script setup>
 defineProps({
-    products:Array
-})
-import Catalog from '../CatalogAdmin.vue';
+    orders: Array
+});
 import AdminLayout from '../Components/AdminLayout.vue';
-
+import OrdersList from './OrdersList.vue';
 </script>

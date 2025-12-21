@@ -48,7 +48,7 @@ watch(form, (newVal) => {
             class="mt-6 space-y-6"
         >
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="email" value="Пошта" />
 
                 <TextInput
                     id="email"
@@ -64,14 +64,14 @@ watch(form, (newVal) => {
 
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
                 <p class="mt-2 text-sm text-gray-800">
-                    Your email address is unverified.
+                    Ваша поштова адреса не підтверджена.
                     <Link
                         :href="route('verification.send')"
                         method="post"
                         as="button"
                         class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                        Click here to re-send the verification email.
+                        Відправити ще раз.
                     </Link>
                 </p>
 
@@ -79,12 +79,12 @@ watch(form, (newVal) => {
                     v-show="status === 'verification-link-sent'"
                     class="mt-2 text-sm font-medium text-green-600"
                 >
-                    A new verification link has been sent to your email address.
+                    Новий лист відправлено вам на пошту.
                 </div>
             </div>
 
             <div class="flex items-center gap-4">
-                <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+                <PrimaryButton :disabled="form.processing">Зберегти</PrimaryButton>
 
                 <Transition
                     enter-active-class="transition ease-in-out"
@@ -96,7 +96,7 @@ watch(form, (newVal) => {
                         v-if="form.recentlySuccessful"
                         class="text-sm text-gray-600"
                     >
-                        Saved.
+                        Збережено.
                     </p>
                 </Transition>
             </div>

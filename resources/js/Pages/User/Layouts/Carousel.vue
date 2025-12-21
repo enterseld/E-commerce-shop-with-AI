@@ -15,7 +15,7 @@ defineProps({
             <!-- Carousel Wrapper -->
             <div class="relative h-full w-full">
                 <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item v-for="(image) in 5">
+                <div class="hidden duration-700 ease-in-out" data-carousel-item v-for="(image) in 7">
                     <img :src="`/product_images/Construction${image}.png`"
                         class="absolute w-full h-full lg:object-cover top-0 left-0 rounded-lg" alt="...">
                 </div>
@@ -33,11 +33,15 @@ defineProps({
                     data-carousel-slide-to="3"></button>
                 <button type="button" class="w-3 h-3 bg-white rounded-full" aria-current="false" aria-label="Slide 5"
                     data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 bg-white rounded-full" aria-current="false" aria-label="Slide 6"
+                    data-carousel-slide-to="4"></button>
+                <button type="button" class="w-3 h-3 bg-white rounded-full" aria-current="false" aria-label="Slide 7"
+                    data-carousel-slide-to="4"></button>
             </div>
         </div>
 
-    
-       
+
+
     </div>
 
 </template>

@@ -43,15 +43,16 @@ function showCategory(page = 1, categoryId) {
     <section class="bg-white dark:bg-gray-900 mx-auto max-w-1xl px-4 sm:px-6 lg:max-w-screen-2xl lg:px-8 py-10">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
             <h1
-                class="mt-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                We invest in the world’s potential</h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here at
-                Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and
-                drive economic growth.</p>
+                class="mt-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
+                Інструменти для професіоналів</h1>
+            <p class="mb-8 mt-2 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">У
+                нашому
+                магазині ви знайдете алмазні диски, свердла, шліфувальні машини та інші будівельні інструменти
+                найвищої якості — для швидкої, точної та безпечної роботи.</p>
             <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                <a href="#"
-                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                    Learn more
+                <a href="/products"
+                    class="inline-flex justify-center items-center py-3 px-6 text-base font-semibold text-black rounded-lg bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-200 transition">
+                    До каталогу
                     <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -67,11 +68,11 @@ function showCategory(page = 1, categoryId) {
                             d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
                         </path>
                     </svg>
-                    Watch video
+                    Переглянути відео
                 </a>
             </div>
             <div class="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
-                <span class="font-semibold text-gray-400 uppercase">FEATURED IN</span>
+                <span class="font-semibold text-gray-400 uppercase">Знайти нас на</span>
                 <div class="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
                     <a href="#" class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
                         <svg class="h-8" viewBox="0 0 132 29" fill="none" xmlns="http://www.w3.org/2000/svg">

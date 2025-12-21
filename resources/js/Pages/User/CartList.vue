@@ -75,6 +75,7 @@ const loadCities = async () => {
     try {
         citiesLoading.value = true
         const response = await axios.get('/getCities/0')
+        console.log("Response", response)
         cities.value = response.data.cities || []
     } catch (error) {
         console.error('Error loading cities:', error)
@@ -336,7 +337,7 @@ defineExpose({
                                         <div>
                                             <input type="number" id="first_product"
                                                 v-model="carts[itemId(product.id)].quantity" min="1"
-                                                class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
                                                 placeholder="1" required />
                                         </div>
                                         <button @click.prevent="update(product, carts[itemId(product.id)].quantity + 1)"
@@ -379,7 +380,7 @@ defineExpose({
                             </label>
                             <div class="relative z-0 w-full mb-5 group">
                                 <input type="name" name="floating_name" id="floating_name" v-model="first_name"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer"
                                     placeholder=" " required />
                                 <label for="floating_name"
                                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ім'я</label>
@@ -387,7 +388,7 @@ defineExpose({
                             <div class="relative z-0 w-full mb-5 ml-5 group">
                                 <input type="last_name" name="floating_last_name" id="floating_last_name"
                                     v-model="last_name"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer"
                                     placeholder=" " required />
                                 <label for="floating_last_name"
                                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Прізвище</label>
@@ -395,7 +396,7 @@ defineExpose({
                             <div class="relative z-0 w-full mb-5 ml-5 group">
                                 <input type="middle_name" name="floating_middle_name" id="floating_middle_name"
                                     v-model="middle_name"
-                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer"
                                     placeholder=" " required />
                                 <label for="floating_middle_name"
                                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">По-батькові</label>
@@ -410,7 +411,7 @@ defineExpose({
                                     <div class="relative z-40 w-full mb-5 group">
                                         <div class="relative">
                                             <ComboboxInput id="floating_city" name="floating_city"
-                                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+                                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0"
                                                 :displayValue="(city) => city?.title || ''" @input="handleCityInput"
                                                 placeholder=" " required />
 
@@ -464,7 +465,7 @@ defineExpose({
                                     <div class="relative z-30 w-full mb-5 group">
                                         <div class="relative">
                                             <ComboboxInput id="floating_warehouse" name="floating_warehouse"
-                                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
+                                                class="peer block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0"
                                                 :displayValue="(warehouse) => warehouse?.title || ''"
                                                 @input="handleWarehouseInput" :disabled="!selected || warehousesLoading"
                                                 placeholder=" " required />
@@ -528,7 +529,7 @@ defineExpose({
 
                     <div class="relative z-30 w-full mb-5 group" v-if="!auth.user">
                         <input type="email" name="floating_email" id="floating_phone_number" v-model="email"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer"
                             placeholder=" " required />
                         <label for="email"
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Електронна
@@ -538,7 +539,7 @@ defineExpose({
                     <div class="relative z-0 w-full mb-5 group">
                         <input type="phone_number" name="floating_phone_number" id="floating_phone_number"
                             v-model="phone_number"
-                            class="block py-2.5  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            class="block py-2.5  px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 peer"
                             placeholder=" " required />
                         <label for="phone_number"
                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Номер
